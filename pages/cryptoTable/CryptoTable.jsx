@@ -16,7 +16,7 @@ const CryptoTable = ({ item }) => {
         {item.id}
       </td>
       <td className="px-6 py-4 text-yellow-400">
-        ${item.current_price !== undefined ? item.current_price : ""}
+        {item.current_price !== undefined ? "$" + item.current_price : ""}
       </td>
       <td
         style={
@@ -32,7 +32,7 @@ const CryptoTable = ({ item }) => {
         %
       </td>
       <td className="px-6 py-4">
-        ${item.market_cap !== undefined ? item.market_cap : ""}
+        {item.market_cap !== undefined ? "$" + item.market_cap : ""}
       </td>
     </>
   );
