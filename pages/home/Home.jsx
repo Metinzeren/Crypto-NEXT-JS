@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCryptoList } from "../../redux/CyrptoSlice";
 import CryptoTable from "../cryptoTable/CryptoTable";
@@ -8,9 +8,12 @@ const Home = () => {
   const { cryptoList, isLoading } = useSelector((state) => state.crypto);
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
-  useEffect(() => {
+  const fetchCrypto = useCallback(() => {
     dispatch(getCryptoList(1));
   }, []);
+  useEffect(() => {
+    fetchCrypto();
+  }, [fetchCrypto]);
 
   if (isLoading) return "Loading";
   console.log(cryptoList);
