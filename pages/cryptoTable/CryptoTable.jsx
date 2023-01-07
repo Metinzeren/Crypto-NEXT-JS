@@ -27,9 +27,8 @@ const CryptoTable = ({ item }) => {
         className="px-6 py-4"
       >
         {item.price_change_percentage_24h !== undefined
-          ? item.price_change_percentage_24h
+          ? item.price_change_percentage_24h + "%"
           : ""}
-        %
       </td>
       <td className="px-6 py-4">
         {item.market_cap !== undefined ? "$" + item.market_cap : ""}

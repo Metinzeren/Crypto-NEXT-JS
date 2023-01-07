@@ -51,6 +51,7 @@ const Home = () => {
             </thead>
             <tbody>
               {cryptoList &&
+                cryptoList !== undefined &&
                 cryptoList.length > 0 &&
                 cryptoList
                   .filter((item) => {
