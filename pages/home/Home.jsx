@@ -8,12 +8,13 @@ const Home = () => {
   const { cryptoList, isLoading } = useSelector((state) => state.crypto);
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
-  const fetchCrypto = useCallback(() => {
-    dispatch(getCryptoList(1));
-  }, []);
+
   useEffect(() => {
+    const fetchCrypto = () => {
+      dispatch(getCryptoList(1));
+    };
     fetchCrypto();
-  }, [fetchCrypto]);
+  }, []);
 
   if (isLoading) return "Loading";
   console.log(cryptoList);
