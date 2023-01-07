@@ -1,10 +1,16 @@
 import React from "react";
+import Image from "next/image";
 const CryptoTable = ({ item }) => {
   return (
     <>
       <td className="px-6 py-4">{item.market_cap_rank}</td>
       <td className="flex font-bold text-black uppercase items-center px-6 py-4">
-        <img className="w-10 mr-1" src={item.image} alt="resim" />
+        <Image
+          src={item.image}
+          alt="Picture of the author"
+          width={40}
+          height={40}
+        />
         {item.id}
       </td>
       <td className="px-6 py-4 text-yellow-400">${item.current_price}</td>
